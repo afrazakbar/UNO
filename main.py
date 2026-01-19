@@ -239,9 +239,14 @@ async def handler(ws):
 # Run server
 # -------------------------
 async def main():
-    print("🎴 UNO Server running on ws://localhost:8765")
-    async with websockets.serve(handler, "localhost", 8765):
+    import os
+
+    PORT = int(os.environ.get("PORT", 8765))
+    print(f"🎴 UNO Server running on port {PORT}")
+
+    async with websockets.serve(handler, "0.0.0.0", PORT):
         await asyncio.Future()
 
 if __name__ == "__main__":
     asyncio.run(main())
+
