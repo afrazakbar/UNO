@@ -10,15 +10,15 @@
     body {
       box-sizing: border-box;
     }
-
+    
     * {
       font-family: 'Nunito', sans-serif;
     }
-
+    
     .uno-title {
       font-family: 'Fredoka One', cursive;
     }
-
+    
     .card {
       width: 60px;
       height: 90px;
@@ -29,13 +29,13 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
       transform-style: preserve-3d;
     }
-
+    
     .card:hover:not(.card-back) {
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 8px 16px rgba(0,0,0,0.4);
       z-index: 100;
     }
-
+    
     .card-inner {
       width: 100%;
       height: 100%;
@@ -47,13 +47,13 @@
       position: relative;
       overflow: hidden;
     }
-
+    
     .card-red { background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%); }
     .card-blue { background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%); }
     .card-green { background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); }
     .card-yellow { background: linear-gradient(135deg, #eab308 0%, #ca8a04 100%); }
     .card-wild { background: linear-gradient(135deg, #1f2937 0%, #111827 100%); }
-
+    
     .card-oval {
       position: absolute;
       width: 85%;
@@ -65,14 +65,14 @@
       align-items: center;
       justify-content: center;
     }
-
+    
     .card-value {
       font-family: 'Fredoka One', cursive;
       font-size: 1.8rem;
       transform: rotate(-30deg);
       text-shadow: 2px 2px 0 rgba(0,0,0,0.1);
     }
-
+    
     .card-corner {
       position: absolute;
       font-family: 'Fredoka One', cursive;
@@ -80,19 +80,19 @@
       color: white;
       text-shadow: 1px 1px 0 rgba(0,0,0,0.3);
     }
-
+    
     .card-corner-tl { top: 3px; left: 5px; }
     .card-corner-br { bottom: 3px; right: 5px; transform: rotate(180deg); }
-
+    
     .card-back {
       background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
       cursor: default;
     }
-
+    
     .card-back .card-inner {
       background: radial-gradient(ellipse at center, #ef4444 0%, #ef4444 30%, #000 30%, #000 35%, #eab308 35%, #eab308 65%, #000 65%, #000 70%, #22c55e 70%, #22c55e 100%);
     }
-
+    
     .card-back-text {
       font-family: 'Fredoka One', cursive;
       color: white;
@@ -102,7 +102,7 @@
       padding: 3px 6px;
       border-radius: 4px;
     }
-
+    
     .wild-colors {
       position: absolute;
       width: 80%;
@@ -110,18 +110,18 @@
       border-radius: 50%;
       overflow: hidden;
     }
-
+    
     .wild-quadrant {
       position: absolute;
       width: 50%;
       height: 50%;
     }
-
+    
     .wild-quadrant:nth-child(1) { top: 0; left: 0; background: #ef4444; }
     .wild-quadrant:nth-child(2) { top: 0; right: 0; background: #3b82f6; }
     .wild-quadrant:nth-child(3) { bottom: 0; left: 0; background: #eab308; }
     .wild-quadrant:nth-child(4) { bottom: 0; right: 0; background: #22c55e; }
-
+    
     .player-hand {
       display: flex;
       justify-content: center;
@@ -131,30 +131,30 @@
       max-width: 100%;
       overflow-x: auto;
     }
-
+    
     .player-hand .card {
       margin-left: -20px;
     }
-
+    
     .player-hand .card:first-child {
       margin-left: 0;
     }
-
+    
     .draw-pile {
       cursor: pointer;
       transition: transform 0.2s ease;
     }
-
+    
     .draw-pile:hover {
       transform: scale(1.05);
     }
-
+    
     .color-picker {
       display: flex;
       gap: 12px;
       padding: 16px;
     }
-
+    
     .color-btn {
       width: 50px;
       height: 50px;
@@ -164,17 +164,17 @@
       transition: transform 0.2s ease, box-shadow 0.2s ease;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-
+    
     .color-btn:hover {
       transform: scale(1.15);
       box-shadow: 0 6px 12px rgba(0,0,0,0.4);
     }
-
+    
     .color-btn-red { background: #ef4444; }
     .color-btn-blue { background: #3b82f6; }
     .color-btn-green { background: #22c55e; }
     .color-btn-yellow { background: #eab308; }
-
+    
     @keyframes cardDeal {
       from {
         opacity: 0;
@@ -185,7 +185,7 @@
         transform: translateY(0) rotate(0) scale(1);
       }
     }
-
+    
     @keyframes cardPlay {
       0% {
         transform: scale(1);
@@ -197,25 +197,25 @@
         transform: scale(1);
       }
     }
-
+    
     .card-deal {
       animation: cardDeal 0.3s ease-out forwards;
     }
-
+    
     .card-play {
       animation: cardPlay 0.3s ease-out;
     }
-
+    
     .unplayable {
       opacity: 0.5;
       cursor: not-allowed;
     }
-
+    
     .unplayable:hover {
       transform: none;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-
+    
     .current-color-indicator {
       width: 24px;
       height: 24px;
@@ -223,7 +223,7 @@
       border: 3px solid white;
       box-shadow: 0 2px 4px rgba(0,0,0,0.3);
     }
-
+    
     .toast {
       position: fixed;
       top: 50%;
@@ -238,7 +238,7 @@
       z-index: 1000;
       animation: toastPop 0.3s ease-out;
     }
-
+    
     @keyframes toastPop {
       from {
         opacity: 0;
@@ -249,12 +249,12 @@
         transform: translate(-50%, -50%) scale(1);
       }
     }
-
+    
     .game-table {
       background: radial-gradient(ellipse at center, #166534 0%, #14532d 50%, #052e16 100%);
       box-shadow: inset 0 0 100px rgba(0,0,0,0.5);
     }
-
+    
     .uno-btn {
       background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
       color: white;
@@ -266,17 +266,17 @@
       cursor: pointer;
       transition: transform 0.2s ease;
     }
-
+    
     .uno-btn:hover:not(:disabled) {
       transform: scale(1.05);
     }
-
+    
     .uno-btn:disabled {
       opacity: 0.5;
       cursor: not-allowed;
       transform: none;
     }
-
+    
     .mode-btn {
       background: linear-gradient(135deg, #ffffff 0%, #f3f4f6 100%);
       color: #1f2937;
@@ -290,30 +290,30 @@
       font-size: 1.5rem;
       min-width: 280px;
     }
-
+    
     .mode-btn:hover {
       transform: translateY(-5px) scale(1.05);
       box-shadow: 0 12px 24px rgba(0,0,0,0.4);
       border-color: #ef4444;
     }
-
+    
     .home-screen {
       background: radial-gradient(ellipse at center, #dc2626 0%, #991b1b 50%, #7f1d1d 100%);
     }
-
+    
     @keyframes float {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
       50% { transform: translateY(-20px) rotate(5deg); }
     }
-
+    
     .floating-card {
       animation: float 3s ease-in-out infinite;
     }
-
+    
     .floating-card:nth-child(2) { animation-delay: 0.5s; }
     .floating-card:nth-child(3) { animation-delay: 1s; }
     .floating-card:nth-child(4) { animation-delay: 1.5s; }
-
+    
     .player-badge {
       background: rgba(0,0,0,0.5);
       border: 2px solid #fbbf24;
@@ -324,12 +324,12 @@
       gap: 8px;
       min-width: 120px;
     }
-
+    
     .player-badge.active {
       border-color: #22c55e;
       box-shadow: 0 0 20px rgba(34, 197, 94, 0.5);
     }
-
+    
     .code-display {
       font-family: 'Fredoka One', cursive;
       font-size: 3rem;
@@ -337,14 +337,14 @@
       color: #fbbf24;
       text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
     }
-
+    
     input {
       font-family: 'Fredoka One', cursive;
       text-align: center;
       text-transform: uppercase;
       letter-spacing: 0.3rem;
     }
-
+    
     .spinner {
       border: 4px solid rgba(255,255,255,0.3);
       border-top: 4px solid white;
@@ -353,12 +353,12 @@
       height: 40px;
       animation: spin 1s linear infinite;
     }
-
+    
     @keyframes spin {
       0% { transform: rotate(0deg); }
       100% { transform: rotate(360deg); }
     }
-
+    
     .connection-status {
       position: fixed;
       top: 10px;
@@ -369,17 +369,17 @@
       font-weight: bold;
       z-index: 1000;
     }
-
+    
     .connection-status.connected {
       background: #22c55e;
       color: white;
     }
-
+    
     .connection-status.disconnected {
       background: #ef4444;
       color: white;
     }
-
+    
     .connection-status.offline {
       background: #f59e0b;
       color: white;
@@ -527,7 +527,7 @@
     let reconnectTimeout = null;
     let gameMode = null; // 'online' or 'ai'
 
-    const WS_URL = 'ws://localhost:8765';
+    const WS_URL = 'wss://uno-wvo9.onrender.com';
     const COLORS = ['red', 'blue', 'green', 'yellow'];
     const VALUES = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'skip', 'reverse', 'draw2'];
 
@@ -556,7 +556,7 @@
         ws.onclose = () => {
           console.log('Disconnected from server');
           updateConnectionStatus('disconnected');
-
+          
           // Try to reconnect after 3 seconds
           reconnectTimeout = setTimeout(() => {
             console.log('Attempting to reconnect...');
@@ -662,12 +662,12 @@
     function showToast(message, duration = 2000) {
       const existing = document.querySelector('.toast');
       if (existing) existing.remove();
-
+      
       const toast = document.createElement('div');
       toast.className = 'toast';
       toast.textContent = message;
       document.body.appendChild(toast);
-
+      
       setTimeout(() => toast.remove(), duration);
     }
 
@@ -677,36 +677,34 @@
       gameMode = 'ai';
       playerName = 'You';
       updateConnectionStatus('offline');
-
-      // Create AI opponents
+      
+      // Create AI opponent
       const aiPlayers = [
-        { id: 'ai1', name: '🤖 Robot 1', isHost: false, hand: [], calledUno: false, isAI: true },
-        { id: 'ai2', name: '🤖 Robot 2', isHost: false, hand: [], calledUno: false, isAI: true },
-        { id: 'ai3', name: '🤖 Robot 3', isHost: false, hand: [], calledUno: false, isAI: true }
+        { id: 'ai1', name: '🤖 Robot', isHost: false, hand: [], calledUno: false, isAI: true }
       ];
-
+      
       const deck = shuffleDeck(createDeck());
-
+      
       // Deal cards to all players
       const allPlayers = [
         { id: playerId, name: playerName, isHost: true, hand: [], calledUno: false, isAI: false },
         ...aiPlayers
       ];
-
+      
       allPlayers.forEach(player => {
         player.hand = [];
         for (let i = 0; i < 7; i++) {
           player.hand.push(deck.pop());
         }
       });
-
+      
       // Start discard pile
       let startCard = deck.pop();
       while (startCard.color === 'wild') {
         deck.insert(0, startCard);
         startCard = deck.pop();
       }
-
+      
       gameState = {
         deck: deck,
         players: allPlayers,
@@ -718,7 +716,7 @@
         hasDrawnThisTurn: false,
         winner: null
       };
-
+      
       showScreen('game-screen');
       renderGame();
     }
@@ -726,14 +724,14 @@
     // AI makes a move
     function aiTurn() {
       if (gameMode !== 'ai') return;
-
+      
       const currentPlayer = gameState.players[gameState.currentPlayerIndex];
       if (!currentPlayer.isAI) return;
-
+      
       setTimeout(() => {
         // Find playable cards
         const playableCards = currentPlayer.hand.filter(card => isPlayable(card));
-
+        
         if (playableCards.length > 0) {
           // Play a random playable card
           const card = playableCards[Math.floor(Math.random() * playableCards.length)];
@@ -748,10 +746,10 @@
     function playCardAI(player, card) {
       // Remove card from hand
       player.hand = player.hand.filter(c => c.id !== card.id);
-
+      
       // Add to discard pile
       gameState.discardPile.push(card);
-
+      
       // Handle wild cards
       if (card.color === 'wild') {
         // AI chooses a color (pick most common color in hand)
@@ -759,7 +757,7 @@
         player.hand.forEach(c => {
           if (c.color !== 'wild') colorCounts[c.color]++;
         });
-        const chosenColor = Object.keys(colorCounts).reduce((a, b) =>
+        const chosenColor = Object.keys(colorCounts).reduce((a, b) => 
           colorCounts[a] > colorCounts[b] ? a : b
         );
         gameState.currentColor = chosenColor;
@@ -768,23 +766,23 @@
         gameState.currentColor = card.color;
         gameState.currentValue = card.value;
       }
-
+      
       // Check for win
       if (player.hand.length === 0) {
         gameState.winner = player.name;
         endGame(player.name);
         return;
       }
-
+      
       // Handle special cards
       handleSpecialCard(card);
-
+      
       // Move to next player
       gameState.currentPlayerIndex = getNextPlayerIndex();
       gameState.hasDrawnThisTurn = false;
-
+      
       renderGame();
-
+      
       // Continue AI turns
       setTimeout(() => aiTurn(), 500);
     }
@@ -793,18 +791,18 @@
       if (gameState.deck.length === 0) {
         reshuffleDeck();
       }
-
+      
       if (gameState.deck.length > 0) {
         const card = gameState.deck.pop();
         player.hand.push(card);
       }
-
+      
       // Move to next player
       gameState.currentPlayerIndex = getNextPlayerIndex();
       gameState.hasDrawnThisTurn = false;
-
+      
       renderGame();
-
+      
       // Continue AI turns
       setTimeout(() => aiTurn(), 500);
     }
@@ -813,7 +811,7 @@
 
     function createDeck() {
       const deck = [];
-
+      
       COLORS.forEach(color => {
         VALUES.forEach(value => {
           deck.push({ color, value, id: `${color}-${value}-1` });
@@ -822,12 +820,12 @@
           }
         });
       });
-
+      
       for (let i = 0; i < 4; i++) {
         deck.push({ color: 'wild', value: 'wild', id: `wild-${i}` });
         deck.push({ color: 'wild', value: 'wild4', id: `wild4-${i}` });
       }
-
+      
       return deck;
     }
 
@@ -910,20 +908,20 @@
         showToast('Not connected to server. Try AI mode!');
         return;
       }
-
+      
       const name = document.getElementById('player-name-input').value.trim();
       const code = document.getElementById('game-code-input').value.trim().toUpperCase();
-
+      
       if (!name) {
         showToast('Please enter your name');
         return;
       }
-
+      
       if (code.length !== 4) {
         showToast('Please enter a 4-character game code');
         return;
       }
-
+      
       playerName = name;
       gameMode = 'online';
       sendMessage('join_game', { playerId, playerName, gameCode: code });
@@ -933,12 +931,12 @@
     function updatePlayersLobby(players) {
       const container = document.getElementById('players-list');
       container.innerHTML = '';
-
+      
       players.forEach(player => {
         const div = document.createElement('div');
         div.className = 'bg-black/30 rounded-lg px-4 py-3 flex items-center gap-3';
         div.innerHTML = `
-          <span class="text-2xl">${player.isHost ? '👑' : '👤'}</span>
+          <span class="text-2xl">${player.isHost ? '👑' : '��'}</span>
           <span class="text-white font-bold text-lg">${player.name}</span>
           ${player.id === playerId ? '<span class="text-yellow-400 text-sm">(You)</span>' : ''}
         `;
@@ -1001,7 +999,7 @@
       const cardEl = document.createElement('div');
       cardEl.className = `card ${isBack ? 'card-back' : getCardColorClass(card.color)} ${!isPlayable && !isBack ? 'unplayable' : ''}`;
       if (card.id) cardEl.dataset.cardId = card.id;
-
+      
       if (isBack) {
         cardEl.innerHTML = `
           <div class="card-inner">
@@ -1033,7 +1031,7 @@
           <span class="card-corner card-corner-br">${getCardDisplayValue(card.value)}</span>
         `;
       }
-
+      
       return cardEl;
     }
 
@@ -1049,19 +1047,19 @@
     // Render game
     function renderGame() {
       if (!gameState || !gameState.players) return;
-
+      
       const currentPlayer = gameState.players.find(p => p.id === playerId);
       if (!currentPlayer) return;
-
+      
       renderCurrentPlayerHand(currentPlayer);
       renderOtherPlayers();
       renderDiscardPile();
       updateColorIndicator();
       updateTurnIndicator();
-
+      
       const isMyTurn = gameState.players[gameState.currentPlayerIndex].id === playerId;
       document.getElementById('uno-btn').disabled = currentPlayer.hand.length !== 2 || currentPlayer.calledUno || !isMyTurn;
-
+      
       // Trigger AI turn if needed
       if (gameMode === 'ai' && gameState.players[gameState.currentPlayerIndex].isAI) {
         aiTurn();
@@ -1072,22 +1070,22 @@
     function renderCurrentPlayerHand(player) {
       const container = document.getElementById('current-player-hand');
       container.innerHTML = '';
-
+      
       document.getElementById('current-player-label').textContent = `👤 ${player.name}`;
       document.getElementById('current-player-count').textContent = player.hand.length;
-
+      
       const isMyTurn = gameState.players[gameState.currentPlayerIndex].id === playerId;
-
+      
       player.hand.forEach((card, index) => {
         const playable = isMyTurn && isPlayable(card);
         const cardEl = createCardElement(card, false, playable);
         cardEl.style.animationDelay = `${index * 0.03}s`;
         cardEl.classList.add('card-deal');
-
+        
         if (playable) {
           cardEl.addEventListener('click', () => playCard(card));
         }
-
+        
         container.appendChild(cardEl);
       });
     }
@@ -1096,16 +1094,16 @@
     function renderOtherPlayers() {
       const container = document.getElementById('other-players-container');
       container.innerHTML = '';
-
+      
       const otherPlayers = gameState.players.filter(p => p.id !== playerId);
-
+      
       otherPlayers.forEach((player) => {
         const playerIndex = gameState.players.findIndex(p => p.id === player.id);
         const isCurrentTurn = playerIndex === gameState.currentPlayerIndex;
-
+        
         const div = document.createElement('div');
         div.className = 'flex flex-col items-center gap-2';
-
+        
         const badge = document.createElement('div');
         badge.className = `player-badge ${isCurrentTurn ? 'active' : ''}`;
         badge.innerHTML = `
@@ -1113,10 +1111,10 @@
           <span class="text-white font-bold text-sm">${player.name}</span>
           <span class="bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-full">${player.hand.length}</span>
         `;
-
+        
         const handContainer = document.createElement('div');
         handContainer.className = 'flex gap-[-15px]';
-
+        
         for (let i = 0; i < Math.min(player.hand.length, 10); i++) {
           const cardEl = createCardElement({}, true);
           cardEl.style.width = '40px';
@@ -1124,7 +1122,7 @@
           cardEl.style.marginLeft = i > 0 ? '-15px' : '0';
           handContainer.appendChild(cardEl);
         }
-
+        
         div.appendChild(badge);
         div.appendChild(handContainer);
         container.appendChild(div);
@@ -1135,19 +1133,19 @@
     function renderDiscardPile() {
       const container = document.getElementById('discard-pile');
       container.innerHTML = '';
-
+      
       if (gameState.discardPile.length > 0) {
         const topCard = gameState.discardPile[gameState.discardPile.length - 1];
         const cardEl = createCardElement(topCard);
         cardEl.classList.add('card-play');
-
+        
         if (topCard.color === 'wild' && gameState.currentColor) {
           const overlay = document.createElement('div');
           overlay.className = 'absolute inset-0 rounded-lg opacity-30';
           overlay.style.backgroundColor = getTextColor(gameState.currentColor);
           cardEl.appendChild(overlay);
         }
-
+        
         container.appendChild(cardEl);
       }
     }
@@ -1168,7 +1166,7 @@
     function updateTurnIndicator() {
       const indicator = document.getElementById('turn-indicator');
       const currentPlayer = gameState.players[gameState.currentPlayerIndex];
-
+      
       if (currentPlayer.id === playerId) {
         indicator.textContent = "Your Turn";
         indicator.style.backgroundColor = 'rgba(34, 197, 94, 0.8)';
@@ -1184,7 +1182,7 @@
     function playCard(card) {
       const isMyTurn = gameState.players[gameState.currentPlayerIndex].id === playerId;
       if (!isMyTurn || !isPlayable(card)) return;
-
+      
       if (gameMode === 'online') {
         if (card.color === 'wild') {
           window.pendingWildCard = card;
@@ -1197,22 +1195,22 @@
         const currentPlayer = gameState.players.find(p => p.id === playerId);
         currentPlayer.hand = currentPlayer.hand.filter(c => c.id !== card.id);
         gameState.discardPile.push(card);
-
+        
         if (card.color === 'wild') {
           window.pendingWildCard = card;
           showColorPicker();
           return;
         }
-
+        
         gameState.currentColor = card.color;
         gameState.currentValue = card.value;
-
+        
         if (currentPlayer.hand.length === 0) {
           gameState.winner = currentPlayer.name;
           endGame(currentPlayer.name);
           return;
         }
-
+        
         handleSpecialCard(card);
         gameState.currentPlayerIndex = getNextPlayerIndex();
         gameState.hasDrawnThisTurn = false;
@@ -1228,11 +1226,11 @@
     // Select color
     function selectColor(color) {
       document.getElementById('color-modal').classList.add('hidden');
-
+      
       if (gameMode === 'online' && window.pendingWildCard) {
-        sendMessage('play_card', {
-          playerId,
-          gameCode,
+        sendMessage('play_card', { 
+          playerId, 
+          gameCode, 
           cardId: window.pendingWildCard.id,
           chosenColor: color
         });
@@ -1240,16 +1238,16 @@
       } else if (gameMode === 'ai' && window.pendingWildCard) {
         const card = window.pendingWildCard;
         const currentPlayer = gameState.players.find(p => p.id === playerId);
-
+        
         gameState.currentColor = color;
         gameState.currentValue = card.value;
-
+        
         if (currentPlayer.hand.length === 0) {
           gameState.winner = currentPlayer.name;
           endGame(currentPlayer.name);
           return;
         }
-
+        
         if (card.value === 'wild4') {
           const nextIndex = getNextPlayerIndex();
           const nextPlayer = gameState.players[nextIndex];
@@ -1261,7 +1259,7 @@
           showToast(`${nextPlayer.name} draws +4`);
           gameState.currentPlayerIndex = nextIndex;
         }
-
+        
         gameState.currentPlayerIndex = getNextPlayerIndex();
         gameState.hasDrawnThisTurn = false;
         window.pendingWildCard = null;
@@ -1273,36 +1271,36 @@
     function drawCard() {
       const isMyTurn = gameState.players[gameState.currentPlayerIndex].id === playerId;
       if (!isMyTurn) return;
-
+      
       if (gameMode === 'online') {
         sendMessage('draw_card', { playerId, gameCode });
       } else {
         // AI mode
         const currentPlayer = gameState.players.find(p => p.id === playerId);
-
+        
         if (gameState.hasDrawnThisTurn) {
           gameState.currentPlayerIndex = getNextPlayerIndex();
           gameState.hasDrawnThisTurn = false;
           renderGame();
           return;
         }
-
+        
         if (gameState.deck.length === 0) {
           reshuffleDeck();
         }
-
+        
         if (gameState.deck.length > 0) {
           const card = gameState.deck.pop();
           currentPlayer.hand.push(card);
           gameState.hasDrawnThisTurn = true;
-
+          
           if (!isPlayable(card)) {
             showToast("Can't play. Click draw to pass.");
           } else {
             showToast("You can play the drawn card!");
           }
         }
-
+        
         renderGame();
       }
     }
@@ -1326,10 +1324,10 @@
       const modal = document.getElementById('game-over-modal');
       const winnerText = document.getElementById('winner-text');
       const winnerMessage = document.getElementById('winner-message');
-
+      
       winnerText.textContent = "🎉 Game Over!";
       winnerMessage.textContent = `${winnerName} wins!`;
-
+      
       modal.classList.remove('hidden');
     }
 
@@ -1338,7 +1336,7 @@
       if (gameCode && gameMode === 'online') {
         sendMessage('leave_game', { playerId, gameCode });
       }
-
+      
       gameCode = null;
       isHost = false;
       gameState = null;
@@ -1367,5 +1365,5 @@
     // Initialize
     connectWebSocket();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c0729f6650f7f0c',t:'MTc2ODgzNDQzMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9c073fabf52f7f0c',t:'MTc2ODgzNTMyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
